@@ -2,4 +2,11 @@
 
 export("%>%")
 export(hello_world)
+export(population)
 importFrom(magrittr,"%>%")
+importFrom(stats,na.omit)
+importFrom(xml2,as_list)
+importFrom(xml2,read_xml)
+importFrom(xml2,xml_child)
+importFrom(xml2,xml_children)
+importFrom(xml2,xml_integer)
