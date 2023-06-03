@@ -1,21 +1,3 @@
-#' Parses date from xml data for a year
-#'
-#' @param year_xml xml data for 1 year
-#'
-#' @returns An integer year
-parse_date <- function(year_xml) {
-  xml_integer(xml_child(year_xml, "wb:date"))
-}
-
-#' Parses population from xml data for a year
-#'
-#' @param year_xml xml data for 1 year
-#'
-#' @returns An integer population
-parse_population <- function(year_xml) {
-  xml_integer(xml_child(year_xml, "wb:value"))
-}
-
 #' Return population data of country
 #'
 #' @param country_name The name of a country
@@ -39,11 +21,11 @@ population <- function(country_name) {
 
   Year <-
     vapply(rev(xml_children(x)), function(year_xml)
-      parse_date(year_xml), numeric(1))
+      extract_integer(year_xml, "wb:date"), numeric(1))
 
   Population <-
     vapply(rev(xml_children(x)), function(year_xml)
-      parse_population(year_xml), numeric(1))
+      extract_integer(year_xml, "wb:value"), numeric(1))
 
   na.omit(data.frame(Year, Population))
 }
