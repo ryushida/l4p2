@@ -5,7 +5,7 @@
 #' @returns A data frame of population and year
 #'
 #' @importFrom stats na.omit
-#' @importFrom xml2 as_list read_xml xml_child xml_children xml_integer
+#' @importFrom xml2 read_xml xml_children
 #'
 #' @export
 population <- function(country_name) {
