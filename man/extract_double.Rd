@@ -12,7 +12,7 @@ extract_double(year_xml, node)
 \item{node}{name of the child node}
 }
 \value{
-An integer
+A double
 }
 \description{
 Extract double from xml data for a year
