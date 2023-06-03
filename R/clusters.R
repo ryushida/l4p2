@@ -49,6 +49,8 @@ random_countries_data <- function(n) {
 #'
 #' @import dplyr
 #' @import ggplot2
+#'
+#' @export
 clusters <- function(n = 10, centers = 3) {
   latest <- random_countries_data(n) %>%
     filter(.data$Year == max(.data$Year))
