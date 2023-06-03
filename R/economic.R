@@ -1,6 +1,6 @@
 #' Return GDP data of country
 #'
-#' @param country_name The name of a country
+#' @param country_code The code of a country
 #'
 #' @returns A data frame of gdp and year
 #'
@@ -8,10 +8,7 @@
 #' @importFrom xml2 read_xml xml_children
 #'
 #' @export
-gdp <- function(country_name) {
-  country_code <-
-    countrycode::countrycode(country_name, origin = "country.name", destination = "wb")
-
+gdp_by_code <- function(country_code) {
   url <-
     paste0("http://api.worldbank.org/v2/country/",
            country_code,
@@ -28,6 +25,20 @@ gdp <- function(country_name) {
       extract_double(year_xml, "wb:value"), numeric(1))
 
   na.omit(data.frame(Year, GDP))
+}
+
+#' Return GDP data of country by name
+#'
+#' @param country_name The name of a country
+#'
+#' @returns A data frame of gdp and year
+#'
+#' @export
+gdp <- function(country_name) {
+  country_code <-
+    countrycode::countrycode(country_name, origin = "country.name", destination = "wb")
+
+  gdp_by_code(country_code)
 }
 
 #' Return GDP per capita data of country

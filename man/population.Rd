@@ -2,7 +2,7 @@
 % Please edit documentation in R/demographic.R
 \name{population}
 \alias{population}
-\title{Return population data of country}
+\title{Return population data of country by name}
 \usage{
 population(country_name)
 }
@@ -13,5 +13,5 @@ population(country_name)
 A data frame of population and year
 }
 \description{
-Return population data of country
+Return population data of country by name
 }

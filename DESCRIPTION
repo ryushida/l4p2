@@ -14,5 +14,7 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     countrycode,
+    dplyr,
+    ggplot2,
     magrittr,
     xml2

@@ -2,7 +2,7 @@
 % Please edit documentation in R/economic.R
 \name{gdp}
 \alias{gdp}
-\title{Return GDP data of country}
+\title{Return GDP data of country by name}
 \usage{
 gdp(country_name)
 }
@@ -13,5 +13,5 @@ gdp(country_name)
 A data frame of gdp and year
 }
 \description{
-Return GDP data of country
+Return GDP data of country by name
 }
